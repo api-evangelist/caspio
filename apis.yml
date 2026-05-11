@@ -1,0 +1,67 @@
+aid: caspio
+name: Caspio
+description: >-
+  Caspio is a low-code cloud platform for building online database applications
+  without writing code, enabling business users and developers to create
+  multi-user data-driven web apps through a point-and-click visual builder.
+  The platform includes automated workflows, AI integration, identity
+  management, and compliance tooling, and exposes a REST API for managing
+  tables, views, records, files, users, and tasks in a Caspio account.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Low Code
+  - No Code
+  - Database
+  - Application Platform
+  - Cloud Database
+  - Online Forms
+  - Workflow Automation
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/caspio/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: caspio:rest-api
+    name: Caspio REST API
+    description: >-
+      REST API for Caspio Bridge accounts providing programmatic access to
+      tables, views, records, files, users, applications, and tasks. Uses
+      OAuth 2.0 client credentials flow to obtain Bearer access tokens scoped
+      to a per-account integration URL.
+    humanURL: https://howto.caspio.com/web-services-api/rest-api/
+    baseURL: https://{account}.caspio.com/rest/v3
+    tags:
+      - Low Code
+      - Database
+      - Records
+      - Tables
+      - Views
+      - Files
+      - Users
+      - OAuth 2.0
+    properties:
+      - type: Documentation
+        url: https://howto.caspio.com/web-services-api/rest-api/
+      - type: Authentication
+        url: https://howto.caspio.com/web-services-api/rest-api/authenticating-rest/
+      - type: Swagger UI
+        url: https://howto.caspio.com/web-services-api/rest-api/swagger-ui/
+      - type: Getting Started
+        url: https://howto.caspio.com/web-services-api/web-services-api/
+
+common:
+  - type: Website
+    url: https://www.caspio.com
+  - type: Documentation
+    url: https://howto.caspio.com/
+  - type: Pricing
+    url: https://www.caspio.com/pricing/
+  - type: Sign Up
+    url: https://pages.caspio.com/free-trial
+  - type: Support
+    url: https://www.caspio.com/support/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
