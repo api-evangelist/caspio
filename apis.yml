@@ -48,7 +48,7 @@ apis:
         url: https://howto.caspio.com/web-services-api/rest-api/authenticating-rest/
       - type: Swagger UI
         url: https://howto.caspio.com/web-services-api/rest-api/swagger-ui/
-      - type: Getting Started
+      - type: GettingStarted
         url: https://howto.caspio.com/web-services-api/web-services-api/
 
 common:
@@ -58,7 +58,7 @@ common:
     url: https://howto.caspio.com/
   - type: Pricing
     url: https://www.caspio.com/pricing/
-  - type: Sign Up
+  - type: SignUp
     url: https://pages.caspio.com/free-trial
   - type: Support
     url: https://www.caspio.com/support/
