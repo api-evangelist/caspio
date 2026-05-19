@@ -52,6 +52,8 @@ apis:
         url: https://howto.caspio.com/web-services-api/web-services-api/
 
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/caspio-inc
   - type: Website
     url: https://www.caspio.com
   - type: Documentation
