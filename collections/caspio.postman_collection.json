@@ -1,0 +1,2438 @@
+{
+  "item": [
+    {
+      "id": "a06a3a64-d0b9-456e-a2e1-92104b9bf8b3",
+      "name": "Authentication",
+      "description": {
+        "content": "OAuth 2.0 token endpoint",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1b8ac5f1-44e4-4e41-bbeb-569cf88313f1",
+          "name": "Obtain an OAuth 2.0 access token (client credentials)",
+          "request": {
+            "name": "Obtain an OAuth 2.0 access token (client credentials)",
+            "description": {},
+            "url": {
+              "path": [
+                "oauth",
+                "token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "grant_type",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "client_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "client_secret",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c16a1f16-4213-4190-9ce3-1e3269ad62de",
+              "name": "Access token response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "oauth",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_secret",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"access_token\": \"string\",\n  \"token_type\": \"bearer\",\n  \"expires_in\": 6866\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "82b0d9a9-cf76-4a8b-9e1c-088a601e3939",
+      "name": "Tables",
+      "description": {
+        "content": "Table schema and record operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9099d878-773b-48fd-be76-62eb5736f4c6",
+          "name": "List all tables in the account",
+          "request": {
+            "name": "List all tables in the account",
+            "description": {},
+            "url": {
+              "path": [
+                "tables"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "febc281d-414f-4c4f-9387-a169043b1837",
+              "name": "A list of table names",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tables"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Result\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "31c0fa91-58d9-46c1-966a-72e808ab8082",
+          "name": "Get a table's metadata",
+          "request": {
+            "name": "Get a table's metadata",
+            "description": {},
+            "url": {
+              "path": [
+                "tables",
+                ":tableName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tableName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fdbb4395-328e-4d8f-b77c-889da0d09fda",
+              "name": "Table metadata",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tables",
+                    ":tableName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tableName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "42c5f5c6-eb02-4ec7-a8ce-24ae72b33b61",
+          "name": "List fields (columns) for a table",
+          "request": {
+            "name": "List fields (columns) for a table",
+            "description": {},
+            "url": {
+              "path": [
+                "tables",
+                ":tableName",
+                "fields"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tableName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "682ff650-c7fe-43ef-b0f3-e8dd3e042f2e",
+              "name": "Field definitions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tables",
+                    ":tableName",
+                    "fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tableName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ca978ece-272a-40fb-93c7-c13148a6c579",
+          "name": "Query table records",
+          "request": {
+            "name": "Query table records",
+            "description": {},
+            "url": {
+              "path": [
+                "tables",
+                ":tableName",
+                "records"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q.select",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q.where",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q.orderBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q.groupBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q.limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q.pageNumber",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q.pageSize",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tableName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2c40a6b2-0da3-4901-886d-b8e37c0ba085",
+              "name": "Records page",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tables",
+                    ":tableName",
+                    "records"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q.select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q.where",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q.orderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q.groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q.limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "q.pageNumber",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "q.pageSize",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tableName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7d88d1c9-cef7-4299-9092-4f04e1d7bfa7",
+          "name": "Insert one record into a table",
+          "request": {
+            "name": "Insert one record into a table",
+            "description": {},
+            "url": {
+              "path": [
+                "tables",
+                ":tableName",
+                "records"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "response",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tableName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b05df220-8a8f-4225-898d-86818b960b69",
+              "name": "Record created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tables",
+                    ":tableName",
+                    "records"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "response",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tableName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "60b11118-72d5-4c83-8beb-8bb74a85fa8f",
+          "name": "Update table records matching a where clause",
+          "request": {
+            "name": "Update table records matching a where clause",
+            "description": {},
+            "url": {
+              "path": [
+                "tables",
+                ":tableName",
+                "records"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q.where",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tableName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ac5311e2-dd35-412b-96af-5eefd4288e92",
+              "name": "Records updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tables",
+                    ":tableName",
+                    "records"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q.where",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tableName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a3083bce-84c7-4963-82b4-2f9ccc4f773f",
+          "name": "Delete table records matching a where clause",
+          "request": {
+            "name": "Delete table records matching a where clause",
+            "description": {},
+            "url": {
+              "path": [
+                "tables",
+                ":tableName",
+                "records"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q.where",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tableName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0f3e89b8-0821-420e-841d-5cb9c908fa3e",
+              "name": "Records deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tables",
+                    ":tableName",
+                    "records"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q.where",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tableName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "61a4248f-1be2-4b7b-92f0-917747207d2e",
+      "name": "Views",
+      "description": {
+        "content": "View record operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ce00b182-bec7-417f-9d31-2d20545bbc01",
+          "name": "List all views in the account",
+          "request": {
+            "name": "List all views in the account",
+            "description": {},
+            "url": {
+              "path": [
+                "views"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0e098efa-2af3-4869-9dba-3b46577496f9",
+              "name": "View names",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "views"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe44ec72-68aa-4dd2-bd36-1a78db1acb77",
+          "name": "Query view records",
+          "request": {
+            "name": "Query view records",
+            "description": {},
+            "url": {
+              "path": [
+                "views",
+                ":viewName",
+                "records"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q.where",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q.limit",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "viewName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f66d0f50-249a-4e35-bda8-672993f52cc4",
+              "name": "Records page",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "views",
+                    ":viewName",
+                    "records"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q.where",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q.limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "viewName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c1ac7b3d-2154-4b77-9b63-1a5d84c80c4c",
+      "name": "Files",
+      "description": {
+        "content": "File management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bab344b1-8370-48d2-a733-238e1f9caa93",
+          "name": "List files in the account file structure",
+          "request": {
+            "name": "List files in the account file structure",
+            "description": {},
+            "url": {
+              "path": [
+                "files"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filePath",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "234f613b-4934-4394-83cd-62421d141c0d",
+              "name": "File and folder list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "files"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filePath",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7250f891-1eeb-41e0-9fe7-3b05d7342d5f",
+          "name": "Upload a file to the account file structure",
+          "request": {
+            "name": "Upload a file to the account file structure",
+            "description": {},
+            "url": {
+              "path": [
+                "files"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "File",
+                  "type": "file",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "57354a71-aaad-4047-a293-9cfc934a08ed",
+              "name": "Upload result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "files"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "File",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9d47bb22-00a5-44e7-8232-ffe68a49835e",
+          "name": "Download a file by its external key",
+          "request": {
+            "name": "Download a file by its external key",
+            "description": {},
+            "url": {
+              "path": [
+                "files",
+                ":externalKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "externalKey",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "84430926-da94-4d40-98aa-828a6bcd16dd",
+              "name": "File content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "files",
+                    ":externalKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "externalKey",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "18cd134d-f288-4e20-9d08-d81be7e18807",
+          "name": "Delete a file",
+          "request": {
+            "name": "Delete a file",
+            "description": {},
+            "url": {
+              "path": [
+                "files",
+                ":externalKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "externalKey",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "79610f13-8f9f-4460-b526-dcfb825c2f71",
+              "name": "File deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "files",
+                    ":externalKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "externalKey",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "bc9d8eac-4d52-488a-914a-4f8e493688c7",
+      "name": "Users",
+      "description": {
+        "content": "Application user management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "741d8732-8607-41af-b8a5-a91b76bef97c",
+          "name": "List application users",
+          "request": {
+            "name": "List application users",
+            "description": {},
+            "url": {
+              "path": [
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ca0b3175-c570-49bd-a4f8-b86b847337e0",
+              "name": "User list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b81a64ec-309e-4784-aa0b-456d9cde4a8d",
+          "name": "Create a new application user",
+          "request": {
+            "name": "Create a new application user",
+            "description": {},
+            "url": {
+              "path": [
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Username\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"Email\": \"<string>\",\n  \"Role\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a3b4c404-97ef-4248-88d0-b99640e6a7f3",
+              "name": "User created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Username\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"Email\": \"<string>\",\n  \"Role\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "60e19f3e-d047-4bd2-acd7-baff48ae3920",
+          "name": "Get a single application user",
+          "request": {
+            "name": "Get a single application user",
+            "description": {},
+            "url": {
+              "path": [
+                "users",
+                ":username"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5708a643-9da5-4712-b191-c61a481ff7a5",
+              "name": "User",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":username"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1b53b946-ff97-4977-a34a-b453995d4d09",
+          "name": "Update a user",
+          "request": {
+            "name": "Update a user",
+            "description": {},
+            "url": {
+              "path": [
+                "users",
+                ":username"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Username\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"Email\": \"<string>\",\n  \"Role\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "da29946a-f283-4ecf-bef1-22cc51880f30",
+              "name": "User updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":username"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Username\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"Email\": \"<string>\",\n  \"Role\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "41712b1d-4a7a-4f97-9d22-2f3fd42dfee1",
+          "name": "Delete a user",
+          "request": {
+            "name": "Delete a user",
+            "description": {},
+            "url": {
+              "path": [
+                "users",
+                ":username"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "64df9700-7e62-47b1-abde-e5f97dba42e6",
+              "name": "User deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":username"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "7f0def65-0bb2-4297-a112-5eb6b358d21d",
+      "name": "Applications",
+      "description": {
+        "content": "Caspio applications",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e39626bd-e8e3-47db-b05a-013ff70422b8",
+          "name": "List Caspio applications",
+          "request": {
+            "name": "List Caspio applications",
+            "description": {},
+            "url": {
+              "path": [
+                "applications"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "422a8e4a-b28d-49c3-afd1-cc9d107ff4ad",
+              "name": "Application list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f6910a4c-95c8-48aa-bd26-54158e3d7dc7",
+      "name": "Tasks",
+      "description": {
+        "content": "Scheduled tasks",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5a5202d6-1db3-4c00-9f19-c44c80c410bb",
+          "name": "List scheduled tasks",
+          "request": {
+            "name": "List scheduled tasks",
+            "description": {},
+            "url": {
+              "path": [
+                "tasks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d3df57e2-41f6-43d8-bc68-3ef1567f963b",
+              "name": "Task list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tasks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0deeb2f0-072f-46db-bdfe-e7eaae11b339",
+          "name": "Run a scheduled task on demand",
+          "request": {
+            "name": "Run a scheduled task on demand",
+            "description": {},
+            "url": {
+              "path": [
+                "tasks",
+                ":taskName",
+                "run"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "taskName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fac614ec-556a-402b-a492-7b3ff22cf1d9",
+              "name": "Task run accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tasks",
+                    ":taskName",
+                    "run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Caspio account subdomain",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "demo",
+      "key": "account"
+    },
+    {
+      "type": "string",
+      "value": "https://{{account}}.caspio.com/rest/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "420a223c-68ce-4229-8db9-d8ea77e84046",
+    "name": "Caspio REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Caspio Bridge REST API (v3) provides programmatic access to tables, views,\nrecords, files, users, applications, and tasks in a Caspio account. The base URL\nis account-specific (per-tenant integration URL) and authentication uses an OAuth\n2.0 client credentials flow to obtain a bearer access token. This best-effort\nOpenAPI is derived from the public help documentation at\nhttps://howto.caspio.com/web-services-api/rest-api/ and the demo Swagger at\nhttps://demo.caspio.com/integrations/rest/swagger.\n\n\nContact Support:\n Name: Caspio",
+      "type": "text/plain"
+    }
+  }
+}
