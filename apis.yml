@@ -60,7 +60,7 @@ common:
     url: https://howto.caspio.com/
   - type: Pricing
     url: https://www.caspio.com/pricing/
-  - type: SignUp
+  - type: Signup
     url: https://pages.caspio.com/free-trial
   - type: Support
     url: https://www.caspio.com/support/
