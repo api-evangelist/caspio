@@ -1,0 +1,19 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://www.caspio.com/compliance/
+url: https://www.caspio.com/compliance/
+certifications:
+- SOC 2
+- PCI DSS
+- HIPAA
+- GDPR
+- FIPS 140
+evidence:
+- source: https://www.caspio.com/compliance/
+  keywords:
+  - soc 2
+  - pci dss
+  - hipaa
+  - trust center
+  - gdpr

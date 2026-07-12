@@ -52,6 +52,14 @@ apis:
         url: https://howto.caspio.com/web-services-api/web-services-api/
 
 common:
+  - type: TrustCenter
+    url: security/caspio-trust-center.yml
+  - type: DomainSecurity
+    url: security/caspio-domain-security.yml
+  - type: Authentication
+    url: authentication/caspio-authentication.yml
+  - url: https://www.caspio.com/blog/
+    type: Blog
   - type: LinkedIn
     url: https://www.linkedin.com/company/caspio-inc
   - type: Website
