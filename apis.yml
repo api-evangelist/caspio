@@ -52,6 +52,8 @@ apis:
         url: https://howto.caspio.com/web-services-api/web-services-api/
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/caspio-agentic-access.yml
   - type: TrustCenter
     url: security/caspio-trust-center.yml
   - type: DomainSecurity
