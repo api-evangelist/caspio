@@ -1,0 +1,125 @@
+openapi: 3.1.0
+info:
+  title: Caspio REST Applications Users API
+  description: 'The Caspio Bridge REST API (v3) provides programmatic access to tables, views,
+
+    records, files, users, applications, and tasks in a Caspio account. The base URL
+
+    is account-specific (per-tenant integration URL) and authentication uses an OAuth
+
+    2.0 client credentials flow to obtain a bearer access token. This best-effort
+
+    OpenAPI is derived from the public help documentation at
+
+    https://howto.caspio.com/web-services-api/rest-api/ and the demo Swagger at
+
+    https://demo.caspio.com/integrations/rest/swagger.
+
+    '
+  version: 3.0.0
+  contact:
+    name: Caspio
+    url: https://www.caspio.com/
+servers:
+- url: https://{account}.caspio.com/rest/v3
+  description: Per-account Caspio Bridge REST endpoint
+  variables:
+    account:
+      default: demo
+      description: Caspio account subdomain
+security:
+- bearerAuth: []
+tags:
+- name: Users
+  description: Application user management
+paths:
+  /users:
+    get:
+      tags:
+      - Users
+      summary: List application users
+      operationId: listUsers
+      responses:
+        '200':
+          description: User list
+    post:
+      tags:
+      - Users
+      summary: Create a new application user
+      operationId: createUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          description: User created
+  /users/{username}:
+    get:
+      tags:
+      - Users
+      summary: Get a single application user
+      operationId: getUser
+      parameters:
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: User
+    put:
+      tags:
+      - Users
+      summary: Update a user
+      operationId: updateUser
+      parameters:
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: User updated
+    delete:
+      tags:
+      - Users
+      summary: Delete a user
+      operationId: deleteUser
+      parameters:
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: User deleted
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        Username:
+          type: string
+        Password:
+          type: string
+        Email:
+          type: string
+        Role:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

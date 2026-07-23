@@ -1,0 +1,50 @@
+openapi: 3.1.0
+info:
+  title: Caspio REST Applications API
+  description: 'The Caspio Bridge REST API (v3) provides programmatic access to tables, views,
+
+    records, files, users, applications, and tasks in a Caspio account. The base URL
+
+    is account-specific (per-tenant integration URL) and authentication uses an OAuth
+
+    2.0 client credentials flow to obtain a bearer access token. This best-effort
+
+    OpenAPI is derived from the public help documentation at
+
+    https://howto.caspio.com/web-services-api/rest-api/ and the demo Swagger at
+
+    https://demo.caspio.com/integrations/rest/swagger.
+
+    '
+  version: 3.0.0
+  contact:
+    name: Caspio
+    url: https://www.caspio.com/
+servers:
+- url: https://{account}.caspio.com/rest/v3
+  description: Per-account Caspio Bridge REST endpoint
+  variables:
+    account:
+      default: demo
+      description: Caspio account subdomain
+security:
+- bearerAuth: []
+tags:
+- name: Applications
+  description: Caspio applications
+paths:
+  /applications:
+    get:
+      tags:
+      - Applications
+      summary: List Caspio applications
+      operationId: listApplications
+      responses:
+        '200':
+          description: Application list
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

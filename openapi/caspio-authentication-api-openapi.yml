@@ -1,0 +1,82 @@
+openapi: 3.1.0
+info:
+  title: Caspio REST Applications Authentication API
+  description: 'The Caspio Bridge REST API (v3) provides programmatic access to tables, views,
+
+    records, files, users, applications, and tasks in a Caspio account. The base URL
+
+    is account-specific (per-tenant integration URL) and authentication uses an OAuth
+
+    2.0 client credentials flow to obtain a bearer access token. This best-effort
+
+    OpenAPI is derived from the public help documentation at
+
+    https://howto.caspio.com/web-services-api/rest-api/ and the demo Swagger at
+
+    https://demo.caspio.com/integrations/rest/swagger.
+
+    '
+  version: 3.0.0
+  contact:
+    name: Caspio
+    url: https://www.caspio.com/
+servers:
+- url: https://{account}.caspio.com/rest/v3
+  description: Per-account Caspio Bridge REST endpoint
+  variables:
+    account:
+      default: demo
+      description: Caspio account subdomain
+security:
+- bearerAuth: []
+tags:
+- name: Authentication
+  description: OAuth 2.0 token endpoint
+paths:
+  /oauth/token:
+    post:
+      tags:
+      - Authentication
+      summary: Obtain an OAuth 2.0 access token (client credentials)
+      operationId: getAccessToken
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - grant_type
+              - client_id
+              - client_secret
+              properties:
+                grant_type:
+                  type: string
+                  enum:
+                  - client_credentials
+                client_id:
+                  type: string
+                client_secret:
+                  type: string
+      responses:
+        '200':
+          description: Access token response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+                  token_type:
+                    type: string
+                    example: bearer
+                  expires_in:
+                    type: integer
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

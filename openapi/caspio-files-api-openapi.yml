@@ -1,0 +1,106 @@
+openapi: 3.1.0
+info:
+  title: Caspio REST Applications Files API
+  description: 'The Caspio Bridge REST API (v3) provides programmatic access to tables, views,
+
+    records, files, users, applications, and tasks in a Caspio account. The base URL
+
+    is account-specific (per-tenant integration URL) and authentication uses an OAuth
+
+    2.0 client credentials flow to obtain a bearer access token. This best-effort
+
+    OpenAPI is derived from the public help documentation at
+
+    https://howto.caspio.com/web-services-api/rest-api/ and the demo Swagger at
+
+    https://demo.caspio.com/integrations/rest/swagger.
+
+    '
+  version: 3.0.0
+  contact:
+    name: Caspio
+    url: https://www.caspio.com/
+servers:
+- url: https://{account}.caspio.com/rest/v3
+  description: Per-account Caspio Bridge REST endpoint
+  variables:
+    account:
+      default: demo
+      description: Caspio account subdomain
+security:
+- bearerAuth: []
+tags:
+- name: Files
+  description: File management
+paths:
+  /files:
+    get:
+      tags:
+      - Files
+      summary: List files in the account file structure
+      operationId: listFiles
+      parameters:
+      - in: query
+        name: filePath
+        schema:
+          type: string
+      responses:
+        '200':
+          description: File and folder list
+    put:
+      tags:
+      - Files
+      summary: Upload a file to the account file structure
+      operationId: uploadFile
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                File:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Upload result
+  /files/{externalKey}:
+    get:
+      tags:
+      - Files
+      summary: Download a file by its external key
+      operationId: downloadFile
+      parameters:
+      - in: path
+        name: externalKey
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: File content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+    delete:
+      tags:
+      - Files
+      summary: Delete a file
+      operationId: deleteFile
+      parameters:
+      - in: path
+        name: externalKey
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: File deleted
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

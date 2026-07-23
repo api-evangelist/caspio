@@ -1,0 +1,197 @@
+openapi: 3.1.0
+info:
+  title: Caspio REST Applications Tables API
+  description: 'The Caspio Bridge REST API (v3) provides programmatic access to tables, views,
+
+    records, files, users, applications, and tasks in a Caspio account. The base URL
+
+    is account-specific (per-tenant integration URL) and authentication uses an OAuth
+
+    2.0 client credentials flow to obtain a bearer access token. This best-effort
+
+    OpenAPI is derived from the public help documentation at
+
+    https://howto.caspio.com/web-services-api/rest-api/ and the demo Swagger at
+
+    https://demo.caspio.com/integrations/rest/swagger.
+
+    '
+  version: 3.0.0
+  contact:
+    name: Caspio
+    url: https://www.caspio.com/
+servers:
+- url: https://{account}.caspio.com/rest/v3
+  description: Per-account Caspio Bridge REST endpoint
+  variables:
+    account:
+      default: demo
+      description: Caspio account subdomain
+security:
+- bearerAuth: []
+tags:
+- name: Tables
+  description: Table schema and record operations
+paths:
+  /tables:
+    get:
+      tags:
+      - Tables
+      summary: List all tables in the account
+      operationId: listTables
+      responses:
+        '200':
+          description: A list of table names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Result:
+                    type: array
+                    items:
+                      type: string
+  /tables/{tableName}:
+    get:
+      tags:
+      - Tables
+      summary: Get a table's metadata
+      operationId: getTable
+      parameters:
+      - $ref: '#/components/parameters/TableName'
+      responses:
+        '200':
+          description: Table metadata
+  /tables/{tableName}/fields:
+    get:
+      tags:
+      - Tables
+      summary: List fields (columns) for a table
+      operationId: listTableFields
+      parameters:
+      - $ref: '#/components/parameters/TableName'
+      responses:
+        '200':
+          description: Field definitions
+  /tables/{tableName}/records:
+    get:
+      tags:
+      - Tables
+      summary: Query table records
+      operationId: queryTableRecords
+      parameters:
+      - $ref: '#/components/parameters/TableName'
+      - in: query
+        name: q.select
+        schema:
+          type: string
+      - in: query
+        name: q.where
+        schema:
+          type: string
+      - in: query
+        name: q.orderBy
+        schema:
+          type: string
+      - in: query
+        name: q.groupBy
+        schema:
+          type: string
+      - in: query
+        name: q.limit
+        schema:
+          type: integer
+      - in: query
+        name: q.pageNumber
+        schema:
+          type: integer
+      - in: query
+        name: q.pageSize
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Records page
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecordsPage'
+    post:
+      tags:
+      - Tables
+      summary: Insert one record into a table
+      operationId: insertTableRecord
+      parameters:
+      - $ref: '#/components/parameters/TableName'
+      - in: query
+        name: response
+        schema:
+          type: string
+          enum:
+          - rows
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Record created
+    put:
+      tags:
+      - Tables
+      summary: Update table records matching a where clause
+      operationId: updateTableRecords
+      parameters:
+      - $ref: '#/components/parameters/TableName'
+      - in: query
+        name: q.where
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Records updated
+    delete:
+      tags:
+      - Tables
+      summary: Delete table records matching a where clause
+      operationId: deleteTableRecords
+      parameters:
+      - $ref: '#/components/parameters/TableName'
+      - in: query
+        name: q.where
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Records deleted
+components:
+  parameters:
+    TableName:
+      in: path
+      name: tableName
+      required: true
+      schema:
+        type: string
+  schemas:
+    RecordsPage:
+      type: object
+      properties:
+        Result:
+          type: array
+          items:
+            type: object
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
