@@ -8,7 +8,19 @@ description: >-
   management, and compliance tooling, and exposes a REST API for managing
   tables, views, records, files, users, and tasks in a Caspio account.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/caspio.png
 tags:
   - Low Code
   - No Code
@@ -23,34 +35,102 @@ created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.19'
 apis:
-  - aid: caspio:rest-api
-    name: Caspio REST API
-    description: >-
-      REST API for Caspio Bridge accounts providing programmatic access to
-      tables, views, records, files, users, applications, and tasks. Uses
-      OAuth 2.0 client credentials flow to obtain Bearer access tokens scoped
-      to a per-account integration URL.
-    humanURL: https://howto.caspio.com/web-services-api/rest-api/
-    baseURL: https://{account}.caspio.com/rest/v3
-    tags:
-      - Low Code
-      - Database
-      - Records
-      - Tables
-      - Views
-      - Files
-      - Users
-      - OAuth 2.0
-    properties:
-      - type: Documentation
-        url: https://howto.caspio.com/web-services-api/rest-api/
-      - type: Authentication
-        url: https://howto.caspio.com/web-services-api/rest-api/authenticating-rest/
-      - type: Swagger UI
-        url: https://howto.caspio.com/web-services-api/rest-api/swagger-ui/
-      - type: GettingStarted
-        url: https://howto.caspio.com/web-services-api/web-services-api/
-
+- aid: caspio:rest-api
+  name: Caspio REST API
+  description: >-
+    REST API for Caspio Bridge accounts providing programmatic access to tables, views, records, files,
+    users, applications, and tasks. Uses OAuth 2.0 client credentials flow to obtain Bearer access tokens
+    scoped to a per-account integration URL.
+  humanURL: https://howto.caspio.com/web-services-api/rest-api/
+  baseURL: https://{account}.caspio.com/rest/v3
+  tags:
+  - Low Code
+  - Database
+  - Records
+  - Tables
+  - Views
+  - Files
+  - Users
+  - OAuth 2.0
+  properties:
+  - type: Documentation
+    url: https://howto.caspio.com/web-services-api/rest-api/
+  - type: Authentication
+    url: https://howto.caspio.com/web-services-api/rest-api/authenticating-rest/
+  - type: Swagger UI
+    url: https://howto.caspio.com/web-services-api/rest-api/swagger-ui/
+  - type: GettingStarted
+    url: https://howto.caspio.com/web-services-api/web-services-api/
+- aid: caspio:caspio-applications-api
+  name: Caspio Applications API
+  description: Caspio applications
+  humanURL: https://howto.caspio.com/web-services-api/rest-api/
+  baseURL: https://{account}.caspio.com/rest/v3
+  tags:
+  - Applications
+  properties:
+  - type: OpenAPI
+    url: openapi/caspio-applications-api-openapi.yml
+- aid: caspio:caspio-authentication-api
+  name: Caspio Authentication API
+  description: OAuth 2.0 token endpoint
+  humanURL: https://howto.caspio.com/web-services-api/rest-api/
+  baseURL: https://{account}.caspio.com/rest/v3
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/caspio-authentication-api-openapi.yml
+- aid: caspio:caspio-files-api
+  name: Caspio Files API
+  description: File management
+  humanURL: https://howto.caspio.com/web-services-api/rest-api/
+  baseURL: https://{account}.caspio.com/rest/v3
+  tags:
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/caspio-files-api-openapi.yml
+- aid: caspio:caspio-tables-api
+  name: Caspio Tables API
+  description: Table schema and record operations
+  humanURL: https://howto.caspio.com/web-services-api/rest-api/
+  baseURL: https://{account}.caspio.com/rest/v3
+  tags:
+  - Tables
+  properties:
+  - type: OpenAPI
+    url: openapi/caspio-tables-api-openapi.yml
+- aid: caspio:caspio-tasks-api
+  name: Caspio Tasks API
+  description: Scheduled tasks
+  humanURL: https://howto.caspio.com/web-services-api/rest-api/
+  baseURL: https://{account}.caspio.com/rest/v3
+  tags:
+  - Tasks
+  properties:
+  - type: OpenAPI
+    url: openapi/caspio-tasks-api-openapi.yml
+- aid: caspio:caspio-users-api
+  name: Caspio Users API
+  description: Application user management
+  humanURL: https://howto.caspio.com/web-services-api/rest-api/
+  baseURL: https://{account}.caspio.com/rest/v3
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/caspio-users-api-openapi.yml
+- aid: caspio:caspio-views-api
+  name: Caspio Views API
+  description: View record operations
+  humanURL: https://howto.caspio.com/web-services-api/rest-api/
+  baseURL: https://{account}.caspio.com/rest/v3
+  tags:
+  - Views
+  properties:
+  - type: OpenAPI
+    url: openapi/caspio-views-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/caspio-agentic-access.yml
