@@ -1,0 +1,26 @@
+{
+  "provider": "caspio",
+  "sources": [
+    "caspio-applications-api-openapi.yml",
+    "caspio-authentication-api-openapi.yml",
+    "caspio-files-api-openapi.yml",
+    "caspio-tables-api-openapi.yml",
+    "caspio-tasks-api-openapi.yml",
+    "caspio-users-api-openapi.yml",
+    "caspio-views-api-openapi.yml"
+  ],
+  "outputs": [
+    "caspio-applications-api-openapi.yml",
+    "caspio-authentication-api-openapi.yml",
+    "caspio-files-api-openapi.yml",
+    "caspio-tables-api-openapi.yml",
+    "caspio-tasks-api-openapi.yml",
+    "caspio-users-api-openapi.yml",
+    "caspio-views-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
