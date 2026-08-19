@@ -1,0 +1,256 @@
+{
+  "item": [
+    {
+      "id": "3970c9a4-d4bb-4edd-b997-de492dc452e7",
+      "name": "Views",
+      "description": {
+        "content": "View record operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c7fb9b2b-d6fb-4ff2-91cd-451e7d93cb99",
+          "name": "List all views in the account",
+          "request": {
+            "name": "List all views in the account",
+            "description": {},
+            "url": {
+              "path": [
+                "views"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b02425bd-5fdd-4d8f-b522-07a087fad353",
+              "name": "View names",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "views"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ca2fd833-e76c-47a3-8372-13d80dbf8362",
+          "name": "Query view records",
+          "request": {
+            "name": "Query view records",
+            "description": {},
+            "url": {
+              "path": [
+                "views",
+                ":viewName",
+                "records"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q.where",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q.limit",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "viewName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7902445d-8af8-457f-9ad7-857105c004eb",
+              "name": "Records page",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "views",
+                    ":viewName",
+                    "records"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q.where",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q.limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "viewName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Caspio account subdomain",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "demo",
+      "key": "account"
+    },
+    {
+      "type": "string",
+      "value": "https://{{account}}.caspio.com/rest/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "71a3e2fa-c617-4577-882b-ee2cddc12fe9",
+    "name": "Caspio REST Applications Views API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Caspio Bridge REST API (v3) provides programmatic access to tables, views,\nrecords, files, users, applications, and tasks in a Caspio account. The base URL\nis account-specific (per-tenant integration URL) and authentication uses an OAuth\n2.0 client credentials flow to obtain a bearer access token. This best-effort\nOpenAPI is derived from the public help documentation at\nhttps://howto.caspio.com/web-services-api/rest-api/ and the demo Swagger at\nhttps://demo.caspio.com/integrations/rest/swagger.\n\n\nContact Support:\n Name: Caspio",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "item": [
+    {
+      "id": "b26f15a0-b9b9-4989-adf6-ca0391c58ed1",
+      "name": "Tasks",
+      "description": {
+        "content": "Scheduled tasks",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bd19fc5d-699b-4bc1-90b2-ca5a2b59699f",
+          "name": "List scheduled tasks",
+          "request": {
+            "name": "List scheduled tasks",
+            "description": {},
+            "url": {
+              "path": [
+                "tasks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5663fac0-3a65-4b50-b55f-8c2b81abad8b",
+              "name": "Task list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tasks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a177cb14-8e9e-4427-8820-78ef42f923ab",
+          "name": "Run a scheduled task on demand",
+          "request": {
+            "name": "Run a scheduled task on demand",
+            "description": {},
+            "url": {
+              "path": [
+                "tasks",
+                ":taskName",
+                "run"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "taskName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "350e512b-386b-46f4-a075-5c2fac7104ef",
+              "name": "Task run accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tasks",
+                    ":taskName",
+                    "run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Caspio account subdomain",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "demo",
+      "key": "account"
+    },
+    {
+      "type": "string",
+      "value": "https://{{account}}.caspio.com/rest/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f7d3bf06-2417-4ddf-be8c-aaf6cc00380d",
+    "name": "Caspio REST Applications Tasks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Caspio Bridge REST API (v3) provides programmatic access to tables, views,\nrecords, files, users, applications, and tasks in a Caspio account. The base URL\nis account-specific (per-tenant integration URL) and authentication uses an OAuth\n2.0 client credentials flow to obtain a bearer access token. This best-effort\nOpenAPI is derived from the public help documentation at\nhttps://howto.caspio.com/web-services-api/rest-api/ and the demo Swagger at\nhttps://demo.caspio.com/integrations/rest/swagger.\n\n\nContact Support:\n Name: Caspio",
+      "type": "text/plain"
+    }
+  }
+}

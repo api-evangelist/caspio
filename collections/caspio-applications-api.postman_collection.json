@@ -1,0 +1,129 @@
+{
+  "item": [
+    {
+      "id": "073445b2-0316-4f14-92ad-6cba6e109fca",
+      "name": "Applications",
+      "description": {
+        "content": "Caspio applications",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f448d422-476b-4f81-a757-49de80a196e6",
+          "name": "List Caspio applications",
+          "request": {
+            "name": "List Caspio applications",
+            "description": {},
+            "url": {
+              "path": [
+                "applications"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Caspio account subdomain",
+                  "type": "any",
+                  "value": "{{account}}",
+                  "key": "account"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fee37151-281e-4539-8ed9-09d907d1ec36",
+              "name": "Application list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Caspio account subdomain",
+                      "type": "any",
+                      "value": "{{account}}",
+                      "key": "account"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Caspio account subdomain",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "demo",
+      "key": "account"
+    },
+    {
+      "type": "string",
+      "value": "https://{{account}}.caspio.com/rest/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d8978d9c-a590-46e7-800c-879fd187503e",
+    "name": "Caspio REST Applications API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Caspio Bridge REST API (v3) provides programmatic access to tables, views,\nrecords, files, users, applications, and tasks in a Caspio account. The base URL\nis account-specific (per-tenant integration URL) and authentication uses an OAuth\n2.0 client credentials flow to obtain a bearer access token. This best-effort\nOpenAPI is derived from the public help documentation at\nhttps://howto.caspio.com/web-services-api/rest-api/ and the demo Swagger at\nhttps://demo.caspio.com/integrations/rest/swagger.\n\n\nContact Support:\n Name: Caspio",
+      "type": "text/plain"
+    }
+  }
+}

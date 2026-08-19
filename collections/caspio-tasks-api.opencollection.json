@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Caspio REST Applications Tasks API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tasks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List scheduled tasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{account}.caspio.com/rest/v3/tasks"
+          },
+          "docs": "List scheduled tasks"
+        },
+        {
+          "info": {
+            "name": "Run a scheduled task on demand",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{account}.caspio.com/rest/v3/tasks/:taskName/run",
+            "params": [
+              {
+                "name": "taskName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Run a scheduled task on demand"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
