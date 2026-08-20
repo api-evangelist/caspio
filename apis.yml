@@ -22,6 +22,14 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/caspio.png
 tags:
+  - Low-Code
+  - No-Code
+  - Database
+  - Application Platform
+  - Cloud Database
+  - Online Forms
+  - Workflow-Automation
+tags_raw:
   - Low Code
   - No Code
   - Database
@@ -44,6 +52,15 @@ apis:
   humanURL: https://howto.caspio.com/web-services-api/rest-api/
   baseURL: https://{account}.caspio.com/rest/v3
   tags:
+  - Low-Code
+  - Database
+  - Records
+  - Tables
+  - Views
+  - File
+  - User
+  - Authentication
+  tags_raw:
   - Low Code
   - Database
   - Records
@@ -67,6 +84,8 @@ apis:
   humanURL: https://howto.caspio.com/web-services-api/rest-api/
   baseURL: https://{account}.caspio.com/rest/v3
   tags:
+  - Application
+  tags_raw:
   - Applications
   properties:
   - type: OpenAPI
@@ -87,6 +106,8 @@ apis:
   humanURL: https://howto.caspio.com/web-services-api/rest-api/
   baseURL: https://{account}.caspio.com/rest/v3
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
@@ -107,6 +128,8 @@ apis:
   humanURL: https://howto.caspio.com/web-services-api/rest-api/
   baseURL: https://{account}.caspio.com/rest/v3
   tags:
+  - Task
+  tags_raw:
   - Tasks
   properties:
   - type: OpenAPI
@@ -117,6 +140,8 @@ apis:
   humanURL: https://howto.caspio.com/web-services-api/rest-api/
   baseURL: https://{account}.caspio.com/rest/v3
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
