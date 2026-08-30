@@ -34,8 +34,8 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/caspio.png
 tags:
-  - Low-Code
-  - No-Code
+  - Low Code
+  - No Code
   - Database
   - Application Platform
   - Cloud Database
@@ -64,7 +64,7 @@ apis:
   humanURL: https://howto.caspio.com/web-services-api/rest-api/
   baseURL: https://{account}.caspio.com/rest/v3
   tags:
-  - Low-Code
+  - Low Code
   - Database
   - Records
   - Tables
