@@ -1,0 +1,1 @@
+{"resource":"https://mcp.caspio.com/mcp","authorization_servers":["https://mcp.caspio.com"],"scopes_supported":["caspio:read","caspio:write","caspio:admin"],"bearer_methods_supported":["header"],"resource_documentation":"https://mcp.caspio.com/docs/api-reference"}

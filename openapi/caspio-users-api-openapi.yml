@@ -1,21 +1,9 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Caspio REST Applications Users API
+  title: Caspio REST Users API
   description: 'The Caspio Bridge REST API (v3) provides programmatic access to tables, views,
 
-    records, files, users, applications, and tasks in a Caspio account. The base URL
-
-    is account-specific (per-tenant integration URL) and authentication uses an OAuth
-
-    2.0 client credentials flow to obtain a bearer access token. This best-effort
-
-    OpenAPI is derived from the public help documentation at
-
-    https://howto.caspio.com/web-services-api/rest-api/ and the demo Swagger at
-
-    https://demo.caspio.com/integrations/rest/swagger.
-
-    '
+    records, files, users, applications, and tasks in a Caspio account.'
   version: 3.0.0
   contact:
     name: Caspio
