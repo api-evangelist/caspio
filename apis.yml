@@ -41,7 +41,7 @@ tags:
   - Application Platform
   - Cloud Database
   - Online Forms
-  - Workflow-Automation
+  - Workflow Automation
 tags_raw:
   - Low Code
   - No Code
@@ -50,6 +50,7 @@ tags_raw:
   - Cloud Database
   - Online Forms
   - Workflow Automation
+  - Workflow-Automation
 url: >-
   https://raw.githubusercontent.com/api-evangelist/caspio/refs/heads/main/apis.yml
 created: '2026-05-11'
