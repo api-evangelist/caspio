@@ -171,6 +171,9 @@ apis:
   - type: OpenAPI
     url: openapi/caspio-views-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/caspio-capability-edges.yml
+    name: Caspio Business Capability Map
   - type: AgenticAccess
     url: agentic-access/caspio-agentic-access.yml
   - type: TrustCenter

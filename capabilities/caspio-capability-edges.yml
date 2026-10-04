@@ -1,0 +1,26 @@
+slug: caspio
+provider: Caspio
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Users
+  spec_file: caspio-users-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.7
+  evidence: POST /users  createUser  Create a new application user; DELETE /users/{username}  deleteUser  Delete
+    a user; schema User
+  reason: Full lifecycle CRUD over application user accounts is identity and access administration. Some
+    ambiguity over whether this is tenant user federation versus general IAM, so confidence is held below
+    the top band.
