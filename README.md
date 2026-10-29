@@ -1,4 +1,4 @@
-# Caspio (caspio)
+# Caspio
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,66 +66,121 @@
 
 Caspio is a low-code cloud platform for building online database applications without writing code, enabling business users and developers to create multi-user data-driven web apps through a point-and-click visual builder. The platform includes automated workflows, AI integration, identity management, and compliance tooling, and exposes a REST API for managing tables, views, records, files, users, and tasks in a Caspio account.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/caspio/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/caspio/refs/heads/main/apis.yml)
+**Areas:** Low-Code · No-Code · Database · Application Platform · Cloud Database · Online Forms · Workflow Automation
 
-## Scope
+## Caspio on APIs.io
 
-- **Type:** Index
+Everything profiled for Caspio is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/caspio/](https://apis.io/providers/caspio/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (8)
 
-- Low Code
-- No Code
-- Database
-- Application Platform
-- Cloud Database
-- Online Forms
-- Workflow Automation
+- [Caspio REST API](https://apis.io/apis/caspio/rest-api/) — REST API for Caspio Bridge accounts providing programmatic access to tables, views, records, files, users, applications, and tasks. Uses OAuth 2.0 client…
+- [Caspio Applications API](https://apis.io/apis/caspio/caspio-applications-api/) — Caspio applications
+- [Caspio Authentication API](https://apis.io/apis/caspio/caspio-authentication-api/) — OAuth 2.0 token endpoint
+- [Caspio Files API](https://apis.io/apis/caspio/caspio-files-api/) — File management
+- [Caspio Tables API](https://apis.io/apis/caspio/caspio-tables-api/) — Table schema and record operations
+- [Caspio Tasks API](https://apis.io/apis/caspio/caspio-tasks-api/) — Scheduled tasks
+- [Caspio Users API](https://apis.io/apis/caspio/caspio-users-api/) — Application user management
+- [Caspio Views API](https://apis.io/apis/caspio/caspio-views-api/) — View record operations
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-11
-- **Modified:** 2026-05-11
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (1)
 
-### Caspio REST API
+Model Context Protocol servers that expose the API to agents.
 
-REST API for Caspio Bridge accounts providing programmatic access to tables, views, records, files, users, applications, and tasks. Uses OAuth 2.0 client credentials flow to obtain Bearer access tokens scoped to a per-account integration URL.
+- [caspio](https://apis.io/servers/caspio/caspio/)
 
-- **Human URL:** [https://howto.caspio.com/web-services-api/rest-api/](https://howto.caspio.com/web-services-api/rest-api/)
-- **Base URL:** `https://{account}.caspio.com/rest/v3`
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Low Code
-- Database
-- Records
-- Tables
-- Views
-- Files
-- Users
-- OAuth 2.0
+- [Caspio Agentic Access](https://apis.io/agentic-access/caspio/caspio-agentic-access/)
 
-#### Properties
+#### Collections (8)
 
-- [Documentation](https://howto.caspio.com/web-services-api/rest-api/)
-- [Authentication](https://howto.caspio.com/web-services-api/rest-api/authenticating-rest/)
-- [Swagger  U I](https://howto.caspio.com/web-services-api/rest-api/swagger-ui/)
-- [Getting Started](https://howto.caspio.com/web-services-api/web-services-api/)
-- [Postman Collection](collections/caspio.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/caspio.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-## Common Properties
+- [Caspio REST API](https://apis.io/collections/caspio/open-caspio/)
+- [Caspio REST Applications API](https://apis.io/collections/caspio/open-caspio-applications-api/)
+- [Caspio REST Applications Authentication API](https://apis.io/collections/caspio/open-caspio-authentication-api/)
+- [Caspio REST Applications Files API](https://apis.io/collections/caspio/open-caspio-files-api/)
+- [Caspio REST Applications Tables API](https://apis.io/collections/caspio/open-caspio-tables-api/)
+- [Caspio REST Applications Tasks API](https://apis.io/collections/caspio/open-caspio-tasks-api/)
+- [Caspio REST Applications Users API](https://apis.io/collections/caspio/open-caspio-users-api/)
+- [Caspio REST Applications Views API](https://apis.io/collections/caspio/open-caspio-views-api/)
 
-- [LinkedIn](https://www.linkedin.com/company/caspio-inc)
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Caspio Authentication](https://apis.io/security/caspio/caspio-authentication/)
+- [Caspio Domain Security](https://apis.io/security/caspio/caspio-domain-security/)
+- [Caspio Trust Center](https://apis.io/security/caspio/caspio-trust-center/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.caspio.com)
 - [Documentation](https://howto.caspio.com/)
 - [Pricing](https://www.caspio.com/pricing/)
-- [Sign Up](https://pages.caspio.com/free-trial)
 - [Support](https://www.caspio.com/support/)
+- [Blog](https://www.caspio.com/blog/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 33.1** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 68.3 |
+| Contract quality | 49.1 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 40.5 |
+| Access clarity | 31.6 |
+
+**Agent readiness 45.8** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/caspio/](https://apis.io/providers/caspio/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Caspio: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/caspio/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
